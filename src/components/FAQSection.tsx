@@ -86,7 +86,7 @@ const FAQSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://api.whatsapp.com/send/?phone=5521996643311&text=Ol%C3%A1%2C+ainda+tenho+d%C3%BAvidas+sobre+o+%2Asistema+aezap+SmartMenu%2A&type=phone_number&app_absent=0" 
+                href="https://api.whatsapp.com/send/?phone=55219972243112&text=Ol%C3%A1%2C+ainda+tenho+d%C3%BAvidas+sobre+o+%2Asistema+aezap+SmartMenu%2A&type=phone_number&app_absent=0" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-6 py-3 rounded-lg font-medium transition-colors"
