@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Cardápio inteligente - Sistema para Delivey</title>
+    <meta name="description" content="Transforme seus pedidos no delivery com cardápio digital inteligente. Pedidos direto no WhatsApp, impressão automática, sem taxa por pedido." />
+    <meta name="author" content="AEZap SmartMenu" />
+
+    <meta property="og:title" content="Cardápio inteligente - Sistema para Delivey" />
+    <meta property="og:description" content="Transforme seus pedidos no delivery com cardápio digital inteligente. Pedidos direto no WhatsApp, impressão automática, sem taxa por pedido." />
+    <meta property="og:type" content="website" />
+  <meta property="og:image" content="/logo-aezap.png?v=1" />
+  <meta property="og:image:secure_url" content="/logo-aezap.png?v=1" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AEZap Smart Menu - Cardápio Digital" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image" content="/logo-aezap.png?v=1" />
+  
+  <!-- UTM Capture Script -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '389004625543481');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Exit Intent: Redirect to WhatsApp when user tries to leave -->
+    <script>
+      // Redireciona para WhatsApp quando usuário tenta sair
+      const link = 'https://api.whatsapp.com/send/?phone=55219972243112&text=Oi%2C+quero+saber+mais+sobre+o+plano+Growth+com+20%25+desconto';
+
+      function setBackRedirect(url) {
+        let urlBackRedirect = url;
+        urlBackRedirect = urlBackRedirect =
+          urlBackRedirect.trim() +
+          (urlBackRedirect.indexOf('?') > 0 ? '&' : '?') +
+          document.location.search.replace('?', '').toString();
+
+        history.pushState({}, '', location.href);
+        history.pushState({}, '', location.href);
+        history.pushState({}, '', location.href);
+
+        window.addEventListener('popstate', () => {
+          console.log('onpopstate', urlBackRedirect);
+          setTimeout(() => {
+            location.href = urlBackRedirect;
+          }, 1);
+        });
+      }
+
+      setBackRedirect(link);
+    </script>
+
+    <!-- Meta Pixel noscript (must be in body) -->
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=389004625543481&ev=PageView&noscript=1" /></noscript>
+  </body>
+</html>

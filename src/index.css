@@ -1,0 +1,122 @@
+@keyframes banner-loop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-banner-loop {
+  animation: banner-loop 40s linear infinite;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme base */
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Red primary for CTAs and highlights */
+    --primary: 0 84% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Darker secondary */
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 47% 10%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 12%;
+    --input: 222 47% 12%;
+    --ring: 0 84% 60%;
+
+    /* Custom design tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(222 47% 4%), hsl(222 47% 8%));
+    --cta-gradient: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 84% 50%));
+    --success-gradient: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 30%));
+    --card-gradient: linear-gradient(135deg, hsl(222 47% 6%), hsl(222 47% 8%));
+    
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+    --shadow-glow: 0 0 40px hsl(0 84% 60% / 0.2);
+    --shadow-green: 0 0 40px hsl(142 76% 36% / 0.2);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Keep the dark theme as default - provide a harmless property to avoid empty-ruleset linting */
+    color-scheme: light;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Prevent horizontal overflow and make media responsive on mobile */
+@layer components {
+  html, body {
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden; /* stop horizontal scroll caused by wide elements */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  *, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Utility to ensure containers don't exceed viewport width */
+  .constrain-mobile {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+}
